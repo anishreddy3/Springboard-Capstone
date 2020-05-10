@@ -14,13 +14,13 @@ from fun import weighted_loss
 from fun import _read
 import tensorflow as tf
 from keras import backend as K
+import logging
 
 app = Flask(__name__)
-#model_path = str(os.path.abspath('newmod (1).h5'))
 global mod
 mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss})
+logging.info('successfully loaded model')
 
-# def load_model():
 
 
 
@@ -48,19 +48,14 @@ def predict():
     pred_dict = {0: 'any', 1 : 'epidural', 2: 'intraparenchymal', 3: 'intraventricular', 4: 'subarachnoid', 5: 'subdural'}
 
     img = _read(up, (256, 256))
+	logging.info('successfully read image')
     plt.imshow(img, cmap = plt.cm.bone);
     dir = os.path.join(os.path.abspath('static'), 'tmp.png')
     plt.savefig(dir)
 
 
-    #mod.compile(loss="binary_crossentropy", optimizer=keras.optimizers.Adam(), metrics=[weighted_loss])
-    # global graph
-    # graph = tf.compat.v1.get_default_graph()
-    #
-    # with graph.as_default():
-    #     K.clear_session()
-
     out = mod.predict(img.reshape(1, 256, 256, 3))
+	logging.info('model successfully returned predictions')
 
     label = pred_dict[np.argmax(out)]
 
@@ -68,7 +63,6 @@ def predict():
 
 
 if __name__ == '__main__':
-    #load_model()
     app.run(threaded = False)
     #app.run(host='0.0.0.0', port = 8000, debug = True)
 
