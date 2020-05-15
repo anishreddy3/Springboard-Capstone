@@ -1,4 +1,6 @@
 flask
 gdown
+tensorflow-gpu
+keras
 
 
