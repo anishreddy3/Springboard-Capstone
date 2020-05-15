@@ -1,6 +1,6 @@
 flask
 gdown
-tensorflow==2.0
-keras==2.3.1
+tensorflow
+keras==2.1.5
 
 
