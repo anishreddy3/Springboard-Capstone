@@ -3,6 +3,8 @@ from flask import Flask, render_template, request
 import numpy as np
 import keras.models
 from keras.models import load_model
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 import re
 import sys
