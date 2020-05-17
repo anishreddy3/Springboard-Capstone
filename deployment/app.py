@@ -11,7 +11,6 @@ import sys
 import os
 import time
 import fun
-import pathlib
 from fun import weighted_loss
 from fun import _read
 import tensorflow as tf
