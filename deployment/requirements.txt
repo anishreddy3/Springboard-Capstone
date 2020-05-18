@@ -1,6 +1,6 @@
 flask
 gdown
-tensorflow-gpu==1.13.1
+tensorflow
 keras
 pydicom
 opencv-python
