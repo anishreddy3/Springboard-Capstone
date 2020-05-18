@@ -26,7 +26,7 @@ else:
     gdown.download(url, output, quiet = False)
 
 global mod
-mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss})
+mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss}, compile = False)
 K.clear_session()
 logging.info('successfully loaded model')
 
