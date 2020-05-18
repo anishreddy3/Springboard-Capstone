@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
 #from scipy.misc import imsave, imread, imresize
 import numpy as np
-import keras.models
-from keras.models import load_model
+import tensorflow.keras.models
+from tensorflow.keras.models import load_model
 import matplotlib
 matplotlib.use('agg')
 import matplotlib.pyplot as plt
@@ -13,7 +13,7 @@ import time
 import fun
 from fun import weighted_loss
 from fun import _read
-from keras import backend as K
+from tensorflow.keras import backend as K
 import logging
 import gdown
 
@@ -26,7 +26,7 @@ else:
     gdown.download(url, output, quiet = False)
 
 global mod
-mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss})
+mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss}, compile = False)
 logging.info('successfully loaded model')
 
 

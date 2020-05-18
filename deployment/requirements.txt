@@ -1,6 +1,5 @@
 flask
 gdown
-keras==2.1.5
 matplotlib
 pydicom
 opencv-python
