@@ -1,7 +1,5 @@
 flask
 gdown
-futures==3.1.1
-keras==2.3.1
 pydicom
 opencv-python
 opencv-contrib-python
