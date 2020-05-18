@@ -27,6 +27,7 @@ else:
 
 global mod
 mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss})
+K.clear_session()
 logging.info('successfully loaded model')
 
 
