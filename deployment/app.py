@@ -13,7 +13,6 @@ import time
 import fun
 from fun import weighted_loss
 from fun import _read
-import tensorflow as tf
 from keras import backend as K
 import logging
 import gdown
