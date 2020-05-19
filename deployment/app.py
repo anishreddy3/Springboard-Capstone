@@ -10,6 +10,7 @@ import re
 import sys
 import os
 import time
+import keras
 import fun
 from fun import weighted_loss
 from fun import _read
@@ -26,7 +27,8 @@ else:
     gdown.download(url, output, quiet = False)
 
 global mod
-mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss})
+mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss}, compile = False)
+mod.compile(loss = "binary_crossentropy", optimizer = keras.optimiers.Adam(), metrics = [weighted_loss])
 logging.info('successfully loaded model')
 
 
