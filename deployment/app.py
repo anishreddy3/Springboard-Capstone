@@ -28,7 +28,7 @@ else:
 
 global mod
 mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss}, compile = False)
-mod.compile(loss = "binary_crossentropy", optimizer = keras.optimiers.Adam(), metrics = [weighted_loss])
+mod.compile(loss = "binary_crossentropy", optimizer = keras.optimizers.Adam(), metrics = [weighted_loss])
 logging.info('successfully loaded model')
 
 
