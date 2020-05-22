@@ -20,15 +20,15 @@ import logging
 import gdown
 
 app = Flask(__name__)
-if os.path.exists('newmod (1).h5'):
+if os.path.exists('finalmod.h5'):
     pass
 else:
-    url = 'https://drive.google.com/uc?id=1NJNG4QEzvDdlMi-1SXiYuQU6EenleGwT'
-    output ='newmod (1).h5'
+    url = 'https://drive.google.com/uc?id=11shl3wITpv0fPoREhMqY3utjNo4RuIZi'
+    output ='finalmod.h5'
     gdown.download(url, output, quiet = False)
 
 global mod
-mod = load_model('newmod (1).h5', custom_objects={'weighted_loss': weighted_loss}, compile = False)
+mod = load_model('finalmod.h5', custom_objects={'weighted_loss': weighted_loss}, compile = False)
 mod.compile(loss = "binary_crossentropy", optimizer = keras.optimizers.Adam(), metrics = [weighted_loss])
 graph = tf.get_default_graph()
 
@@ -58,7 +58,7 @@ def predict():
         if not up:
             return render_template('index.html', label = 'No file')
 
-    pred_dict = {0: 'any', 1 : 'epidural', 2: 'intraparenchymal', 3: 'intraventricular', 4: 'subarachnoid', 5: 'subdural'}
+    pred_dict = {0 : 'epidural', 1: 'intraparenchymal', 2: 'intraventricular', 3: 'subarachnoid', 4: 'subdural'}
 
     img = _read(up, (256, 256))
     logging.info('successfully read image')
@@ -69,6 +69,7 @@ def predict():
     with graph.as_default():
 
         out = mod.predict(img.reshape(1, 256, 256, 3))
+        out = out[0][:5]
         logging.info('model successfully returned predictions')
 
         label = pred_dict[np.argmax(out)]
