@@ -32,4 +32,21 @@ It is also highly recommended to use the Anaconda distribution of Python which h
 This project is an effort to utilize all the skills learned in the Springboard's Machine Learning Career Track to solve a real world problem and gain the needed experience to build a large scale AI system and deploy to production.
 
 
+### Files Description <a name = "description"></a>
+
+*data_wrangling_EDA.ipynb* : Initial Exploratory analysis of the dataset
+*spring_cap_scaled.ipynb* : Notebook containing model architecture and training
+*deployment/* : Files needed to deploy the model as a Flask Application
+
+
+### Results <a name = "results"></a>
+
+![](capdemo.gif)
+
+
+### Acknowledgements <a name = "acknowledgements"></a>
+
+I would like to thank Radiological Society of North America (RSNA) for the dataset and my springboard mentor Srdjan Santic for guiding me through this process.
+
+
 
