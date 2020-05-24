@@ -34,9 +34,9 @@ This project is an effort to utilize all the skills learned in the Springboard's
 
 ### Files Description <a name = "description"></a>
 
-*data_wrangling_EDA.ipynb* : Initial Exploratory analysis of the dataset
-*spring_cap_scaled.ipynb* : Notebook containing model architecture and training
-*deployment/* : Files needed to deploy the model as a Flask Application
+*data_wrangling_EDA.ipynb* : Initial Exploratory analysis of the dataset <br>
+*spring_cap_scaled.ipynb* : Notebook containing model architecture and training <br>
+*deployment/* : Files needed to deploy the model as a Flask Application <br>
 
 
 ### Results <a name = "results"></a>
